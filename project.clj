@@ -1,6 +1,6 @@
-(defproject org.clojars.strongh/clojure-hbase "0.90.4-cdh3u3"
+(defproject org.clojars.aperiodic/clojure-hbase "0.90.4-cdh3u3"
   :description "A convenient Clojure interface to HBase."
-  :dependencies [[org.clojure/clojure "1.3.0"]
+  :dependencies [[org.clojure/clojure "1.2.1"]
                  [org.clojars.aperiodic/hadoop "0.20.2-cdh3u3-core"]
                  [org.clojars.aperiodic/clojure-hbase "0.90.4-cdh3u3"]
                  [org.apache.zookeeper/zookeeper "3.3.3"]
