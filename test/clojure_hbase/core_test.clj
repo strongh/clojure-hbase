@@ -13,7 +13,8 @@
 (def test-tbl-name (str "clojure-hbase-test-db" (UUID/randomUUID)))
 (defn setup-tbl [] (create-table (table-descriptor test-tbl-name)))
 (defn remove-tbl []
-  (disable-table test-tbl-name)
+  (when (table-enabled? test-tbl-name)
+    (disable-table test-tbl-name))
   (delete-table test-tbl-name))
 
 (defmacro as-test [& body]
@@ -46,7 +47,7 @@
      (delete-column-family test-tbl-name cf-name)
      (is (= nil (.getFamily (get-table-descriptor test-tbl-name)
                             (to-bytes cf-name)))
-         "Deleted the column family successfully."))))
+         "Deleted the column family successfully"))))
 
 (deftest get-put-delete
   (let [cf-name "test-cf-name"
