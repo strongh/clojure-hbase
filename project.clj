@@ -5,7 +5,10 @@
                  [org.apache.hadoop/hadoop-core "0.23.1-mr1-cdh4.0.0b2"]
                  [org.apache.hbase/hbase "0.92.1-cdh4.0.0b2"]
                  [org.apache.zookeeper/zookeeper "3.3.3"]
-                 [log4j/log4j "1.2.16"]
+                 [log4j/log4j "1.2.16" :exclusions [javax.mail/mail
+                                                    javax.jms/jms
+                                                    com.sun.jdmk/jmxtools
+                                                    com.sun.jmx/jmxri]]
                  [commons-logging/commons-logging "1.0.4"]]
   :repositories {"cdh" ~(str "https://repository.cloudera.com/artifactory/"
                              "cloudera-repos/")})
