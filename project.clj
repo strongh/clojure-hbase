@@ -1,8 +1,14 @@
-(defproject org.clojars.strongh/clojure-hbase "0.90.5"
+(defproject org.clojars.aperiodic/clojure-hbase "0.92.1-cdh4.0.0b2"
   :description "A convenient Clojure interface to HBase."
-  :dependencies [[org.clojure/clojure "1.3.0"]
-                 [org.apache.hadoop/hadoop-core "0.20.2-dev"]
-                 [org.apache.hbase/hbase "0.90.5"]
+  :dependencies [[org.clojure/clojure "1.2.1"]
+                 [org.apache.hadoop/hadoop-common "0.23.1-cdh4.0.0b2"]
+                 [org.apache.hadoop/hadoop-core "0.23.1-mr1-cdh4.0.0b2"]
+                 [org.apache.hbase/hbase "0.92.1-cdh4.0.0b2"]
                  [org.apache.zookeeper/zookeeper "3.3.3"]
-                 [log4j/log4j "1.2.16"]
-                 [commons-logging/commons-logging "1.0.4"]])
+                 [log4j/log4j "1.2.16" :exclusions [javax.mail/mail
+                                                    javax.jms/jms
+                                                    com.sun.jdmk/jmxtools
+                                                    com.sun.jmx/jmxri]]
+                 [commons-logging/commons-logging "1.0.4"]]
+  :repositories {"cdh" ~(str "https://repository.cloudera.com/artifactory/"
+                             "cloudera-repos/")})

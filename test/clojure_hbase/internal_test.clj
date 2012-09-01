@@ -7,5 +7,4 @@
        cons 2
        + 2
        inc 1
-       (fn [a b c] 2) 3
-       (fn [a b c & r] r) 4))
+       (fn [a b c] 2) ))
