@@ -148,8 +148,10 @@
   (.isTableEnabled (hbase-admin) (to-bytes table-name)))
 
 (defn list-tables
-  []
-  (seq (.listTables (hbase-admin))))
+  ([]
+     (seq (.listTables (hbase-admin))))
+  ([regex]
+     (seq (.listTables (hbase-admin) regex))))
 
 (defn major-compact
   [table-or-region-name]
